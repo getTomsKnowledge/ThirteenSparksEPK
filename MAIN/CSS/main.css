@@ -1,0 +1,67 @@
+@import url('nav_bar.css');
+
+/* Ember & Ink */
+html[data-theme="ember-ink"] {
+  --bg: #070707;
+  --surface: #17171A;
+  --surface-raised: #252227;
+  --text: #F6F4F0;
+  --muted: #BDB9B8;
+  --accent: #88B6E7;
+  --accent-soft: #FFD7A1;
+  --border: #39343B;
+  --warm: #F2A85D;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, Segoe UI, sans-serif; }
+a { color: var(--accent); text-underline-offset: .22em; }
+a:hover { color: var(--accent-soft); }
+.topnav { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; padding: .75rem clamp(1rem, 4vw, 3rem); background: var(--surface); border-bottom: 1px solid var(--border); overflow: visible; }
+.topnav a, .topnav .dropbtn { float: none; display: inline-block; color: var(--muted); background: transparent; border: 0; font: inherit; font-size: .95rem; line-height: 1.3; padding: .65rem .85rem; text-decoration: none; border-radius: .4rem; cursor: pointer; }
+.topnav a:hover, .topnav .dropbtn:hover { background: var(--surface-raised); color: var(--text); }
+.topnav a.active { background: var(--surface-raised); color: var(--accent); }
+.dropdown { float: none; position: relative; overflow: visible; }
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 180px; z-index: 10; padding: .4rem; background: var(--surface); border: 1px solid var(--border); border-radius: .55rem; box-shadow: 0 15px 35px #0008; }
+.dropdown-content a { display: block; float: none; color: var(--text); padding: .55rem .7rem; }
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
+.button-primary { display: inline-block; padding: .65rem 1rem; background: var(--accent); color: var(--bg); border: 1px solid var(--accent); border-radius: .5rem; font-weight: 700; text-decoration: none; }
+.button-primary:hover { background: var(--accent-soft); color: var(--bg); }
+.button-secondary { display: inline-block; padding: .65rem 1rem; border: 1px solid var(--border); border-radius: .5rem; color: var(--text); text-decoration: none; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: .8rem; padding: 1.25rem; }
+.muted { color: var(--muted); }
+.hero { display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-direction: row-reverse; padding: 20px 0 20px 24px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 14, 23, 0.75),
+            rgba(8, 14, 23, 0.95)
+        ),
+        url("../IMAGES/Tryin'_CoverArt.jpeg")
+        center 45% / cover no-repeat;
+
+    border-radius: 12px;
+    border: 1px solid #263849;
+  }
+.hero-text { flex:1; min-width:0; }
+.artist-photo { width:min(30%, 340px); height:clamp(10%, 10vh, 140px); object-fit:cover; object-position:center 35%; flex-shrink:0; }
+.record-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; }
+.record-card { padding:1rem; background:var(--surface, #17171a); border-radius:10px; }
+.record-card img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; }
+.record-card img:hover { opacity:.85; }
+details { padding:1rem 0; border-bottom:1px solid var(--surface, #333); }
+summary { cursor:pointer; color:var(--accent, #88b6e7); font-weight:600; }
+summary:hover { text-decoration:underline; }
+.mood-links { display:flex; gap:1rem; flex-wrap:wrap; }
+.mood-links a { padding:.7rem 1rem; background:var(--surface, #17171a); border-radius:8px; }
+.odd-facts { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:.75rem 1.5rem; }
+.odd-facts dt { font-weight:bold; }
+.odd-facts dd { margin:0; }
+.mark { color: var(--warm);}
+section { scroll-margin-top:1rem; }
+@media (max-width:600px) { .hero { gap:1rem; } .hero h1 { font-size:1.6rem; } .odd-facts { grid-template-columns:1fr; } }
+
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { a, button { transition: color .18s, background-color .18s, border-color .18s; } }
